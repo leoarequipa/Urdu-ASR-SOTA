@@ -1,6 +1,6 @@
 Name,Value,Timestamp,Step
 train_runtime,1310.619,1646910000000,1
-train_samples_per_second,0.618,1646910000000+12,1
+train_samples_per_second,0.618,1646910000000,1
 train_steps_per_second,0.019,1646910000000,1
 total_flos,1.03E+17,1646910000000,1
 train_loss,0.6416,1646910000000,1
