@@ -1,0 +1,6 @@
+Transformers==4.17.0.dev0
+Pytorch==1.10.2+cu102
+Datasets==1.18.2.dev0
+Tokenizers==0.11.0
+https://github.com/kpu/kenlm/archive/master.zip 
+pyctcdecode==0.3.0

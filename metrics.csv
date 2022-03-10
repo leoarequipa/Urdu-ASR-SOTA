@@ -1,0 +1,14 @@
+Name,Value,Timestamp,Step
+train_runtime,1310.619,1.64691E+12,1
+train_samples_per_second,0.618,1.64691E+12,1
+train_steps_per_second,0.019,1.64691E+12,1
+total_flos,1.03E+17,1.64691E+12,1
+train_loss,0.6416,1.64691E+12,1
+epoch,184.62,1.64691E+12,1
+eval_loss,0.9889,1.64691E+12,1
+eval_wer,0.5607,1.64691E+12,1
+eval_cer,0.237,1.64691E+12,1
+eval_runtime,119.2739,1.64691E+12,1
+eval_samples_per_second,2.859,1.64691E+12,1
+eval_steps_per_second,0.361,1.64691E+12,1
+epoch,184.62,1.64691E+12,1
