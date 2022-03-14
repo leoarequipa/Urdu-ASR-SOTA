@@ -95,7 +95,7 @@ def main(args):
     sampling_rate = feature_extractor.sampling_rate
 
     # resample audio
-    dataset = dataset.cast_column("path", path_adjust())
+    dataset = dataset.map(path_adjust)
     dataset = dataset.cast_column("path", Audio(sampling_rate=sampling_rate))
 
     # load eval pipeline
