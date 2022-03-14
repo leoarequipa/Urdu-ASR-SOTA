@@ -61,8 +61,6 @@ def normalize_text(text: str) -> str:
     text = re.sub("['ّ]", '', text)
     text = re.sub("['ٔ]", '', text)
     text = re.sub("['ٰ]", '', text)
-    # batch["sentence"] = re.sub("[ء]", '', batch["sentence"])
-    # batch["sentence"] = re.sub("[آ]", 'ا', batch["sentence"])
     text = re.sub("[ۂ]", 'ہ', text)
     text = re.sub("[ي]", "ی",text)
     text = re.sub("[ؤ]", "و", text)
@@ -74,15 +72,20 @@ def normalize_text(text: str) -> str:
     # note that order is important here!
     token_sequences_to_ignore = ["\n\n", "\n", "   ", "  "]
 
+    
     for t in token_sequences_to_ignore:
         text = " ".join(text.split(t))
 
     return text
 
+def path_adjust(batch):
+  batch["path"] = "Data/ur/clips/"+str(batch["path"])
+  return batch
 
 def main(args):
     # load dataset
     dataset = load_dataset(args.dataset, args.config,delimiter="\t",split=args.split, use_auth_token=True)
+    
 
     # for testing: only process the first two examples as a test
     # dataset = dataset.select(range(10))
@@ -92,7 +95,8 @@ def main(args):
     sampling_rate = feature_extractor.sampling_rate
 
     # resample audio
-    dataset = dataset.cast_column("audio", Audio(sampling_rate=sampling_rate))
+    dataset = dataset.cast_column("path", path_adjust())
+    dataset = dataset.cast_column("path", Audio(sampling_rate=sampling_rate))
 
     # load eval pipeline
     if args.device is None:
@@ -102,7 +106,7 @@ def main(args):
     # map function to decode audio
     def map_to_pred(batch):
         prediction = asr(
-            batch["audio"]["array"], chunk_length_s=args.chunk_length_s, stride_length_s=args.stride_length_s
+            batch["path"]["array"], chunk_length_s=args.chunk_length_s, stride_length_s=args.stride_length_s
         )
 
         batch["prediction"] = prediction["text"]
