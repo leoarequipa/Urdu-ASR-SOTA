@@ -4,3 +4,7 @@ Datasets==1.18.2.dev0
 Tokenizers==0.11.0
 https://github.com/kpu/kenlm/archive/master.zip 
 pyctcdecode==0.3.0
+mlflow==1.24.0
+fastds==0.6.0
+dvc==2.9.5
+dagshub==0.1.8
