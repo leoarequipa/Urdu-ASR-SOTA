@@ -20,8 +20,12 @@ def log_results(result: Dataset, args: Dict[str, str]):
     cer = load_metric("cer")
 
     # compute metrics
-    wer_result = wer.compute(references=result["target"], predictions=result["prediction"])
-    cer_result = cer.compute(references=result["target"], predictions=result["prediction"])
+    wer_result = wer.compute(
+        references=result["target"], predictions=result["prediction"]
+    )
+    cer_result = cer.compute(
+        references=result["target"], predictions=result["prediction"]
+    )
 
     # print & log results
     result_str = f"WER: {wer_result}\n" f"CER: {cer_result}"
@@ -53,39 +57,39 @@ def normalize_text(text: str) -> str:
     chars_to_ignore_regex = """[\!\؛\،\٫\؟\۔\٪\"\'\:\-\‘\’]"""  # noqa: W605 IMPORTANT: this should correspond to the chars that were ignored during training
 
     text = re.sub(chars_to_ignore_regex, "", text.lower())
-    text = re.sub("[،]", '', text)
-    text = re.sub("[؟]", '', text)
-    text = re.sub("['َ]", '', text)
-    text = re.sub("['ُ]", '', text)
-    text = re.sub("['ِ]", '', text)
-    text = re.sub("['ّ]", '', text)
-    text = re.sub("['ٔ]", '', text)
-    text = re.sub("['ٰ]", '', text)
-    text = re.sub("[ۂ]", 'ہ', text)
-    text = re.sub("[ي]", "ی",text)
+    text = re.sub("[،]", "", text)
+    text = re.sub("[؟]", "", text)
+    text = re.sub("['َ]", "", text)
+    text = re.sub("['ُ]", "", text)
+    text = re.sub("['ِ]", "", text)
+    text = re.sub("['ّ]", "", text)
+    text = re.sub("['ٔ]", "", text)
+    text = re.sub("['ٰ]", "", text)
+    text = re.sub("[ۂ]", "ہ", text)
+    text = re.sub("[ي]", "ی", text)
     text = re.sub("[ؤ]", "و", text)
     # batch["sentence"] = re.sub("[ئ]", 'ى', batch["sentence"])
-    text = re.sub("[ى]", 'ی', text)
-    text = re.sub("[۔]", '', text)
+    text = re.sub("[ى]", "ی", text)
+    text = re.sub("[۔]", "", text)
 
     # In addition, we can normalize the target text, e.g. removing new lines characters etc...
     # note that order is important here!
     token_sequences_to_ignore = ["\n\n", "\n", "   ", "  "]
 
-    
     for t in token_sequences_to_ignore:
         text = " ".join(text.split(t))
 
     return text
 
+
 def path_adjust(batch):
-  batch["path"] = "Data/ur/clips/"+str(batch["path"])
-  return batch
+    batch["path"] = "Data/ur/clips/" + str(batch["path"])
+    return batch
+
 
 def main(args):
     # load dataset
-    dataset = load_dataset(args.dataset, args.config,delimiter="\t",split=args.split, use_auth_token=True)
-    
+    dataset = load_dataset(args.dataset, args.config, delimiter="\t", split=args.split)
 
     # for testing: only process the first two examples as a test
     # dataset = dataset.select(range(10))
@@ -101,12 +105,16 @@ def main(args):
     # load eval pipeline
     if args.device is None:
         args.device = 0 if torch.cuda.is_available() else -1
-    asr = pipeline("automatic-speech-recognition", model=args.model_id, device=args.device)
+    asr = pipeline(
+        "automatic-speech-recognition", model=args.model_id, device=args.device
+    )
 
     # map function to decode audio
     def map_to_pred(batch):
         prediction = asr(
-            batch["path"]["array"], chunk_length_s=args.chunk_length_s, stride_length_s=args.stride_length_s
+            batch["path"]["array"],
+            chunk_length_s=args.chunk_length_s,
+            stride_length_s=args.stride_length_s,
         )
 
         batch["prediction"] = prediction["text"]
@@ -125,7 +133,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--model_id", type=str, required=True, help="Model identifier. Should be loadable with 🤗 Transformers"
+        "--model_id",
+        type=str,
+        required=True,
+        help="Model identifier. Should be loadable with 🤗 Transformers",
     )
     parser.add_argument(
         "--dataset",
@@ -134,17 +145,30 @@ if __name__ == "__main__":
         help="Dataset name to evaluate the `model_id`. Should be loadable with 🤗 Datasets",
     )
     parser.add_argument(
-        "--config", type=str, required=True, help="Config of the dataset. *E.g.* `'en'`  for Common Voice"
-    )
-    parser.add_argument("--split", type=str, required=True, help="Split of the dataset. *E.g.* `'test'`")
-    parser.add_argument(
-        "--chunk_length_s", type=float, default=None, help="Chunk length in seconds. Defaults to 5 seconds."
-    )
-    parser.add_argument(
-        "--stride_length_s", type=float, default=None, help="Stride of the audio chunks. Defaults to 1 second."
+        "--config",
+        type=str,
+        required=True,
+        help="Config of the dataset. *E.g.* `'en'`  for Common Voice",
     )
     parser.add_argument(
-        "--log_outputs", action="store_true", help="If defined, write outputs to log file for analysis."
+        "--split", type=str, required=True, help="Split of the dataset. *E.g.* `'test'`"
+    )
+    parser.add_argument(
+        "--chunk_length_s",
+        type=float,
+        default=None,
+        help="Chunk length in seconds. Defaults to 5 seconds.",
+    )
+    parser.add_argument(
+        "--stride_length_s",
+        type=float,
+        default=None,
+        help="Stride of the audio chunks. Defaults to 1 second.",
+    )
+    parser.add_argument(
+        "--log_outputs",
+        action="store_true",
+        help="If defined, write outputs to log file for analysis.",
     )
     parser.add_argument(
         "--device",
