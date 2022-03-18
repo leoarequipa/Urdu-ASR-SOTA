@@ -36,7 +36,9 @@ def asr(audio):
 
 title = "Urdu Automatic Speech Recognition"
 
-description = """<center>This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on the common_voice dataset.<img src="https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA/resolve/main/Images/cover.jpg" alt="logo" width="550"/></center>"""
+description = """This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on the common_voice dataset.
+               <img src="https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA/resolve/main/Images/cover.jpg" 
+               alt="logo" width="550"/>"""
 article = """<p style='text-align: center'>
                 <a href='https://dagshub.com/kingabzpro/Urdu-ASR-SOTA' target='_blank'>
                 Source Code on DagsHub</a>
