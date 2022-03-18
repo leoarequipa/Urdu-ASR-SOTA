@@ -47,39 +47,6 @@ This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on the common
 
 article = "<p style='text-align: center'><a href='https://dagshub.com/kingabzpro/Urdu-ASR-SOTA' target='_blank'>Source Code on DagsHub</a></p><p style='text-align: center'><a href='https://huggingface.co/blog/fine-tune-xlsr-wav2vec2' target='_blank'>Fine-tuning XLS-R for Multi-Lingual ASR with 🤗 Transformers</a></p></center></p>"
 
-examples = [
-    ["examples/00008.jpg"],
-    ["examples/00045.jpg"],
-]
-favicon = "examples/favicon.ico"
-thumbnail = "examples/SavtaDepth.png"
-
-
-def main():
-    iface = gr.Interface(
-        gen,
-        gr.inputs.Image(shape=(640, 480), type="numpy"),
-        "image",
-        title=title,
-        flagging_options=["incorrect", "worst", "ambiguous"],
-        allow_flagging="manual",
-        flagging_callback=hf_writer,
-        description=description,
-        article=article,
-        examples=examples,
-        theme="peach",
-        allow_screenshot=True,
-    )
-
-    iface.launch(enable_queue=True)
-
-
-# enable_queue=True,auth=("admin", "pass1234")
-
-if __name__ == "__main__":
-    main()
-
-
 examples = [["Sample/sample1.mp3"], ["Sample/sample2.mp3"], ["Sample/sample3.mp3"]]
 
 
