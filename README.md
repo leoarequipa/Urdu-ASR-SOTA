@@ -105,6 +105,9 @@ pip install https://github.com/kpu/kenlm/archive/master.zip pyctcdecode
 
 ## Gradio App
 
+Try out the app on HuggingFace Spaces 👉 [
+Urdu-ASR-SOTA Gradio App](https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA)
+
 ![Gradio](Images/gradio.gif)
 
 ## SOTA
