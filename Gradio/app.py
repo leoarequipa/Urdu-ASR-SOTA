@@ -44,7 +44,16 @@ Savta Depth is a collaborative Open Source Data Science project for monocular de
 </center>
 </p>
 """
-article = "<p style='text-align: center'><a href='https://dagshub.com/OperationSavta/SavtaDepth' target='_blank'>SavtaDepth Project from OperationSavta</a></p><p style='text-align: center'><a href='https://colab.research.google.com/drive/1XU4DgQ217_hUMU1dllppeQNw3pTRlHy1?usp=sharing' target='_blank'>Google Colab Demo</a></p></center></p>"
+article = """<p style='text-align: center'>
+                <a href='https://dagshub.com/kingabzpro/Urdu-ASR-SOTA' target='_blank'>
+                Source Code on DagsHub</a>
+                </p><p style='text-align: center'>
+                <a href='https://huggingface.co/blog/wav2vec2-with-ngram' target='_blank'>
+                Boosting Wav2Vec2 with n-grams in 🤗 Transformers
+                </a>
+                <a href='https://huggingface.co/blog/fine-tune-xlsr-wav2vec2' target='_blank'>
+                Fine-tuning XLS-R for Multi-Lingual ASR with 🤗 Transformers
+                </a></p></center></p>"""
 
 examples = [["Sample/sample1.mp3"], ["Sample/sample2.mp3"], ["Sample/sample3.mp3"]]
 
