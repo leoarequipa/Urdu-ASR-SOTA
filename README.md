@@ -114,13 +114,13 @@ Urdu-ASR-SOTA Gradio App](https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA
 
 - [x] Add Language Model
 - [x] Webapp/API
-- [] Denoise Audio
-- [] Text Processing
-- [] Spelling Mistakes
+- [ ] Denoise Audio
+- [ ] Text Processing
+- [ ] Spelling Mistakes
 - [x] Hyperparameters optimization
-- [] Training on 300 Epochs & 64 Batch Size
-- [] Improved Language Model
-- [] Contribute to Urdu ASR Audio Dataset
+- [ ] Training on 300 Epochs & 64 Batch Size
+- [ ] Improved Language Model
+- [ ] Contribute to Urdu ASR Audio Dataset
 
 ## Robust Speech Recognition Challenge 2022
 
