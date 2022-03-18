@@ -29,21 +29,14 @@ def asr(audio):
 
     asr = pipeline("automatic-speech-recognition", model=Model)
     prediction = asr(audio, chunk_length_s=5, stride_length_s=1)
-    return prediction
+    return prediction["text"]
 
 
 ################### Gradio Web APP ################################
 
 title = "Urdu Automatic Speech Recognition"
 
-description = """
-<p>
-<center>
-This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on the common_voice dataset.
-<img src="https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA/blob/main/Images/cover.jpg" alt="logo" width="250"/>
-</center>
-</p>
-"""
+description = """<p><center>This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on the common_voice dataset.<img src="https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA/resolve/main/Images/cover.jpg" alt="logo" width="350"/></center></p>"""
 article = """<p style='text-align: center'>
                 <a href='https://dagshub.com/kingabzpro/Urdu-ASR-SOTA' target='_blank'>
                 Source Code on DagsHub</a>
