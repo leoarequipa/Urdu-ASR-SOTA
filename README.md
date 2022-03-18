@@ -105,6 +105,8 @@ pip install https://github.com/kpu/kenlm/archive/master.zip pyctcdecode
 
 ## Gradio App
 
+![Gradio](Images/gradio.gif)
+
 ## SOTA
 
 - [x] Add Language Model
