@@ -5,7 +5,7 @@ colorFrom: pink
 colorTo: blue
 sdk: gradio
 sdk_version: 2.8.11
-app_file: App/app.py
+app_file: Gradio/app.py
 pinned: false
 license: apache-2.0
 ---
