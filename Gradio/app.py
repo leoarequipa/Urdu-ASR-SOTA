@@ -11,7 +11,7 @@ hf_writer = gr.HuggingFaceDatasetSaver(HF_TOKEN, "Urdu-ASR-flags")
 
 ############## DVC ################################
 
-PROD_MODEL_PATH = "Model"
+PROD_MODEL_PATH = "./Model"
 
 if os.path.isdir(".dvc"):
     print("Running DVC")
