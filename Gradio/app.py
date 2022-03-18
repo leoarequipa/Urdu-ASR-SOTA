@@ -39,7 +39,7 @@ title = "Urdu Automatic Speech Recognition"
 description = """
 <p>
 <center>
-Savta Depth is a collaborative Open Source Data Science project for monocular depth estimation - Turn 2d photos into 3d photos. To test the model and code please check out the link bellow.
+This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on the common_voice dataset.
 <img src="https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA/blob/main/Images/cover.jpg" alt="logo" width="250"/>
 </center>
 </p>
@@ -47,13 +47,7 @@ Savta Depth is a collaborative Open Source Data Science project for monocular de
 article = """<p style='text-align: center'>
                 <a href='https://dagshub.com/kingabzpro/Urdu-ASR-SOTA' target='_blank'>
                 Source Code on DagsHub</a>
-                </p><p style='text-align: center'>
-                <a href='https://huggingface.co/blog/wav2vec2-with-ngram' target='_blank'>
-                Boosting Wav2Vec2 with n-grams in 🤗 Transformers
-                </a>
-                <a href='https://huggingface.co/blog/fine-tune-xlsr-wav2vec2' target='_blank'>
-                Fine-tuning XLS-R for Multi-Lingual ASR with 🤗 Transformers
-                </a></p></center></p>"""
+                </center></p>"""
 
 examples = [["Sample/sample1.mp3"], ["Sample/sample2.mp3"], ["Sample/sample3.mp3"]]
 
@@ -76,7 +70,7 @@ def main():
         flagging_options=["incorrect", "worst", "ambiguous"],
         allow_flagging="manual",
         flagging_callback=hf_writer,
-        # description=description,
+        description=description,
         article=article,
         examples=examples,
         theme="peach",
