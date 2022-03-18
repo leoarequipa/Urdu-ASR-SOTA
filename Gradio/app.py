@@ -40,7 +40,7 @@ description = """
 <p>
 <center>
 Savta Depth is a collaborative Open Source Data Science project for monocular depth estimation - Turn 2d photos into 3d photos. To test the model and code please check out the link bellow.
-<img src="https://huggingface.co/kingabzpro/wav2vec2-large-xls-r-300m-Urdu/resolve/main/Image/cover.jpg" alt="logo" width="250"/>
+<img src="https://huggingface.co/kingabzpro/wav2vec2-large-xls-r-300m-Urdu/resolve/main/Images/cover.jpg" alt="logo" width="250"/>
 </center>
 </p>
 """
