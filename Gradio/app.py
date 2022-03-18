@@ -11,13 +11,13 @@ hf_writer = gr.HuggingFaceDatasetSaver(HF_TOKEN, "Urdu-ASR-flags")
 
 ############## DVC ################################
 
-PROD_MODEL_PATH = "Model"
+Model = "Model"
 
 if os.path.isdir(".dvc"):
     print("Running DVC")
     # os.system("dvc config cache.type copy")
     # os.system("dvc config core.no_scm true")
-    if os.system(f"dvc pull {PROD_MODEL_PATH} -r origin") != 0:
+    if os.system(f"dvc pull {Model} -r origin") != 0:
         exit("dvc pull failed")
     # os.system("rm -r .dvc")
 # .apt/usr/lib/dvc
@@ -27,7 +27,7 @@ if os.path.isdir(".dvc"):
 
 def asr(audio):
 
-    asr = pipeline("automatic-speech-recognition", model=model)
+    asr = pipeline("automatic-speech-recognition", model=Model)
     prediction = asr(audio, chunk_length_s=5, stride_length_s=1)
     return prediction
 
