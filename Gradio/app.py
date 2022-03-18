@@ -11,15 +11,15 @@ hf_writer = gr.HuggingFaceDatasetSaver(HF_TOKEN, "Urdu-ASR-flags")
 
 ############## DVC ################################
 
-PROD_MODEL_PATH = "./Model"
+PROD_MODEL_PATH = "Model"
 
 if os.path.isdir(".dvc"):
     print("Running DVC")
-    os.system("dvc config cache.type copy")
-    os.system("dvc config core.no_scm true")
-    if os.system(f"dvc pull {PROD_MODEL_PATH}") != 0:
+    # os.system("dvc config cache.type copy")
+    # os.system("dvc config core.no_scm true")
+    if os.system(f"dvc pull {PROD_MODEL_PATH} -r origin") != 0:
         exit("dvc pull failed")
-    os.system("rm -r .dvc")
+    # os.system("rm -r .dvc")
 # .apt/usr/lib/dvc
 
 ############## Inference ##############################
