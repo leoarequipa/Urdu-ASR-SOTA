@@ -6,7 +6,7 @@ In the Automatic Speech Recognition (ASR) project, I am finetuning Facebook's wa
 
 > **Note:** The Urdu dataset is limited to 3 hours of data, and it is not enough to achieve better results.
 
-It took a while to understand what I was missing initially, as the WER was very high. In this project, I was focused on removing symbols and hyperparameter optimization. To achieve the state-of-the-art status, I have trained the model on 200 Epochs which took 4 hours to train on 4 A100 GPUs. Finally, I have boosted the wav2vec2 model using the ngrams language model. The final results improved drastically from 56 to 46 WER.
+It took a while to understand what I was missing. The WER and the training losses were not decresing. So, I started focusing on text processing and hyperparameter optimization. To achieve the state-of-the-art status, I trained the model on 200 `Epochs` which took 4 hours on **4 A100 GPUs** (OVH Cloud). Finally, I have boosted the wav2vec2 model using the ngrams language model. The final results improved drastically from **56** to **46** WER.
 
 ## Model Finetunning
 
