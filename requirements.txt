@@ -8,3 +8,4 @@ mlflow==1.24.0
 fastds==0.6.0
 dvc==2.9.5
 dagshub==0.1.8
+
