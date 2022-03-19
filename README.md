@@ -1,7 +1,12 @@
 # Urdu Automatic Speech Recognition State of the Art Solution
 
 ![cover](Images/cover.png)
-In this Automatic Speech Recognition project, I am finetuning Facebook's wav2vec2-xls-r-300m model and Mozilla-foundation common_voice_8_0 Urdu Dataset. It took a while to understand what I was missing initially, as the WER was very high. In this project, I was focused on removing symbols and hyperparameter optimization. To achieve the state-of-the-art status, I have trained the model on 200 Epochs which took 4 hours to train on 4 A100 GPUs. Finally, I have boosted the wav2vec2 model using the ngrams language model. The final results improved drastically from 56 to 46 WER.
+
+In the Automatic Speech Recognition (ASR) project, I am finetuning Facebook's wav2vec2-xls-r-300m model on Mozilla-foundation common_voice_8_0 Urdu Dataset.
+
+> **Note:** The Urdu dataset is limited to 3 hours of data, and it is not enough to achieve better results.
+
+It took a while to understand what I was missing initially, as the WER was very high. In this project, I was focused on removing symbols and hyperparameter optimization. To achieve the state-of-the-art status, I have trained the model on 200 Epochs which took 4 hours to train on 4 A100 GPUs. Finally, I have boosted the wav2vec2 model using the ngrams language model. The final results improved drastically from 56 to 46 WER.
 
 ## Model Finetunning
 
