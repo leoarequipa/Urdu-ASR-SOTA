@@ -127,6 +127,8 @@ The **Data** folder contains `ur` folder, which has TSV's and audio files. The *
 
 I have simply added HuggingFace Spaces remote to the `app` branch and pulled the model files using DVC. Read the [blog post](https://medium.com/towards-data-science/deploying-gradio-app-on-spaces-using-dagshub-a-beginners-tutorial-a42664abcc14) to learn more about deploying Gradio app on Spaces using DVC.
 
+> **Note:** The source code for Gradio is available at [app](https://dagshub.com/kingabzpro/Urdu-ASR-SOTA/src/app) branch. I cannot merge it to the `master` branch due to metadata in README.md.
+
 Try out the WebApp on HuggingFace Spaces 👉 [
 Urdu-ASR-SOTA Gradio App](https://huggingface.co/spaces/kingabzpro/Urdu-ASR-SOTA)
 
