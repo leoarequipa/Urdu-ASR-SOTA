@@ -17,7 +17,7 @@ The following results we achieved on the evaluation set:
 
 ## Quick Start
 
-Clone Repository using [FastDS](https://github.com/DAGsHub/fds) and install dependecies using `requirment.txt` file.
+Clone Repository using 🦩[FastDS](https://github.com/DAGsHub/fds) and install dependecies using `requirment.txt` file.
 
 ```bash
 pip install fastds
