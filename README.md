@@ -181,7 +181,7 @@ This project was the result of HuggingFace [Robust Speech Recognition Challenge]
 
 ## License
 
-The dataset is under Public Domain, [CC-0](https://creativecommons.org/share-your-work/public-domain/cc0/) license and model is under [APACHE 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+The dataset is under Public Domain, [CC-0](https://creativecommons.org/share-your-work/public-domain/cc0/) license and model is under [APACHE-2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 
 ## Citation
 
