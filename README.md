@@ -91,9 +91,10 @@ pip install https://github.com/kpu/kenlm/archive/master.zip pyctcdecode
 ## Eval Results
 
 You can see the clear advanctage of using language model. With language model then the WER is reduced from 56 to 46.
+
 | Without LM | With LM |
 | ---------- | ------- |
-| 56.21 | 46.37 |
+| 56.21      | 46.37   |
 
 ## Directory Structure
 
